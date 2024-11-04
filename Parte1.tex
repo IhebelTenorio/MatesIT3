@@ -183,6 +183,63 @@ Ahora, graficando con geogebra:
 
 
 % ---- 03. Ejercicio 30 sección 9.7 ABD ---- %
+\section*{Ejercicio 30, sección 9.7 ABD}
+Encontrar los primeros cuatro polinomios de Taylor para $f(x) = \ln(x + 1)$ alrededor de $x_0 = 0$.
+
+\subsection*{Encontrar las derivadas}
+Primero, calculamos las primeras 4 derivadas de $f(x) = \ln(x + 1)$:
+
+\begin{align*}
+f(x) &= \ln(x + 1) \\
+f'(x) &= \frac{1}{x + 1} \\
+f''(x) &= -\frac{1}{(x + 1)^2} \\
+f'''(x) &= \frac{2}{(x + 1)^3} \\
+f^{IV}(x) &= -\frac{6}{(x + 1)^4}
+\end{align*}
+
+\subsection*{Evaluar las derivadas en $x_0 = 0$}
+Evaluamos cada derivada en el punto $x_0 = 0$:
+
+\begin{align*}
+f(0) &= \ln(1) = 0 \\
+f'(0) &= 1 \\
+f''(0) &= -1 \\
+f'''(0) &= 2 \\
+f^{IV}(0) &= -6
+\end{align*}
+
+\subsection*{Construir los polinomios}
+Usando la fórmula del polinomio de Taylor:
+
+\begin{equation*}
+$P_n(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + ... + \frac{f^{(n)}(a)}{n!}(x-a)^n$
+\end{equation*}
+
+Construimos cada polinomio:
+
+\begin{align*}
+P_0(x) &= 0 \\
+\\
+P_1(x) &= P_0(x) + x = x \\
+\\
+P_2(x) &= P_1(x) - \frac{1}{2!}x^2 = x - \frac{1}{2}x^2 \\
+\\
+P_3(x) &= P_2(x) + \frac{2}{3!}x^3 = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 \\
+\\
+P_4(x) &= P_3(x) - \frac{6}{4!}x^4 = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4
+\end{align*}
+\\
+Por lo tanto, los primeros cuatro polinomios de Taylor para $\ln(x + 1)$ alrededor de $x_0 = 0$ son:
+\begin{itemize}
+    \item $P_0(x) = 0$
+    \item $P_1(x) = x$
+    \item $P_2(x) = x - \frac{1}{2}x^2$
+    \item $P_3(x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3$
+    \item $P_4(x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{4}x^4$
+\end{itemize}
+\begin{center}
+        \includegraphics[width=16cm]{./imagenes/graph30.png}
+\end{center}
 
 
 % ---- 04. Ejercicio 58 sección 3.6 ABD ---- %
@@ -362,6 +419,65 @@ Por lo tanto, las dimensiones del rectángulo de mayor área que se puede inscri
 
 % ---- 06. Ejercicio 33 sección 4.7 ABD ---- %
 
+\section*{Ejercicio 33 sección 4.7 ABD}
+
+\subsection*{Demostración}
+Demostrar que en un círculo de radio $r$, el ángulo central $\theta$ que subtiende un arco cuya longitud es 1.5 veces la longitud $L$ de su cuerda satisface la ecuación $\theta = 3\sin(\theta/2)$. Luego, usar el Método de Newton para aproximar $\theta$.
+\includegraphics[height=5.5cm]{./imagenes/circulo.png}
+
+1) Establecemos las relaciones fundamentales en un círculo de radio $r$:
+\begin{itemize}
+    \item Longitud del arco: $s = r\theta$
+    \item Longitud de la cuerda: $L = 2r\sin(\theta/2)$
+\end{itemize}
+
+2) Por el enunciado, sabemos que el arco es 1.5 veces la cuerda:
+\begin{align*}
+    s &= 1.5L \\
+    r\theta &= 1.5(2r\sin(\theta/2)) \\
+    r\theta &= 3r\sin(\theta/2)
+\end{align*}
+
+3) Simplificando:
+\begin{align*}
+    \theta &= 3\sin(\theta/2)
+\end{align*}
+
+Por lo tanto queda demostrado.
+
+\subsection*{Método de Newton}
+
+Para resolver la ecuación $\theta = 3\sin(\theta/2)$, definimos:
+\begin{align*}
+    f(\theta) &= \theta - 3\sin(\theta/2) \\
+    f'(\theta) &= 1 - \frac{3}{2}\cos(\theta/2)
+\end{align*}
+
+La fórmula iterativa de Newton es:
+\[\theta_{n+1} = \theta_n - \frac{f(\theta_n)}{f'(\theta_n)} = \theta_n - \frac{\theta_n - 3\sin(\theta_n/2)}{1 - \frac{3}{2}\cos(\theta_n/2)}\]
+
+Tomando $\theta_0 = 2$ como valor inicial:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    Iteración & Valor de $\theta_n$ (radianes) \\
+    \hline
+    0 & 2 \\
+    1 & 4.76667118856 \\
+    2 & 3.47244868771 \\
+    3 & 3.06074062731 \\
+    4 & 2.99347087944 \\
+    5 & 2.9915646674 \\
+    6 & 2.99156313645 \\
+    7 & 2.99156313644 \\
+    \hline
+\end{tabular}
+\end{center}
+
+El método converge a:
+\[\theta = 2.99156313644 \text{ radianes} = 171.4039  grados°\]
+
 
 % ---- 07. Ejercicio 48 R.E. Cap. 4 ABD ---- %
 \section*{Ejercicio 48, Review Excercises Cap. 4 ABD}
@@ -530,6 +646,73 @@ Este valor de \( r \) maximiza la cantidad de luz que pasa a través de la venta
 
 
 % ---- 09. Ejercicio 72 R.E. Cap. 4 ABD ---- %
+
+\section*{Problema 72 R.E. Cap. 4 ABD}
+Según la Ley de Kepler, los planetas en nuestro sistema solar se mueven en órbitas elípticas alrededor del Sol. Si el punto más cercano de un planeta al Sol ocurre en el tiempo $t = 0$, entonces la distancia $r$ desde el centro del planeta al centro del Sol en algún tiempo posterior $t$ puede determinarse mediante la ecuación:
+
+\[r = a(1 - e \cos \phi)\]
+
+donde $a$ es la distancia promedio entre centros, $e$ es una constante positiva que mide la "planitud" de la órbita elíptica, y $\phi$ es la solución de la ecuación de Kepler:
+
+\[\frac{2\pi t}{T} = \phi - e \sin \phi\]
+
+donde $T$ es el tiempo que toma una órbita completa del planeta.
+
+\subsection*{Datos}
+\begin{itemize}
+    \item $t = 90$ días
+    \item $T = 365$ días
+    \item $a = 150 \times 10^6$ km
+    \item $e = 0.0167$
+\end{itemize}
+
+\subsection*{Resolución de la Ecuación de Kepler}
+
+Sustituimos los valores en la ecuación de Kepler:
+\[\frac{2\pi(90)}{365} = \phi - 0.0167\sin\phi\]
+\[1.5534 = \phi - 0.0167\sin\phi\]
+
+Para resolver esta ecuación transcendental, utilizamos el Método de Newton:
+
+Definimos:
+\begin{align*}
+    f(\phi) &= \phi - 0.0167\sin\phi - 1.5534 \\
+    f'(\phi) &= 1 - 0.0167\cos\phi
+\end{align*}
+
+La fórmula iterativa de Newton es:
+\[\phi_{n+1} = \phi_n - \frac{f(\phi_n)}{f'(\phi_n)}\]
+
+Comenzando con $\phi_0 = 1.5534$:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    Iteración & Valor de $\phi_n$ \\
+    \hline
+    0 & 1.5534 \\
+    1 & 1.5701 \\
+    2 & 1.5701 \\
+    \hline
+\end{tabular}
+\end{center}
+
+El método converge rápidamente a $\phi = 1.5701$.
+
+\subsection*{Cálculo de la Distancia}
+
+Ahora sustituimos $\phi = 1.5701$ en la ecuación de la distancia:
+
+\begin{align*}
+    r &= a(1 - e\cos\phi) \\
+    &= 150 \times 10^6 (1 - 0.0167\cos(1.5701)) \\
+    &= 150 \times 10^6 (1 - 0.0167 (0.000696)) \\
+    &= 150 \times 10^6 (1 - 0.000011623) \\
+    &= 149,998,256.55 \text{ km}
+\end{align*}
+
+\section*{Conclusión}
+La distancia de la Tierra al Sol cuando $t = 90$ días es aproximadamente 149,998,256.55 km.
 
 
 \end{document}
