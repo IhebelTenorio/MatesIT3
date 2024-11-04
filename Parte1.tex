@@ -62,13 +62,165 @@
 
 
 % ---- 02. Ejercicio 29 sección 9.7 ABD ---- %
+\section*{Ejercicio 29, sección 9.7 ABD}
+Encuentra los primeros 4 distintos polinomios de Taylor al rededor de $x=x_0$ y grafica la función dada y los polinomios de Taylor al mismo tiempo.
+\begin{equation*}
+        f(x)=cos(x), \ \ x_0 = \pi
+\end{equation*}
+Recordamos que el polinomio de Taylor es dado por:
+\begin{equation*}
+        P_n(x)= f(a)+f'(a)(x-a)=\frac{f''(a)(x-a)^2}{2!}+...+\frac{f^{(n)(a)(x-a)^n}}{n!}
+\end{equation*}
+Comenzamos derivando la funcion.
+\begin{equation*}
+        \begin{split}
+                f(x)&=cos(x) \\
+                f'(x)&=-sen(x) \\
+                f''(x)&=-cos(x) \\
+                f'''(x)&=sen(x) \\
+                f^{IV}(x)&=cos(x)
+        \end{split}
+\end{equation*}
+
+Luego obtenemos los primeros 4 polinomios de Taylor $P_n$ sustituyendo.
+\begin{equation*}
+        \begin{split}
+                P_0 &= cos( \pi ) \\
+                P_1 &= P_0 - sen( \pi )(x- \pi) \\
+                P_2 &= P_1 - \frac{cos( \pi )}{2!} (x- \pi )^2 \\
+                P_3 &= P_2 + \frac{sen( \pi )}{3!}(x- \pi)^3 \\
+                P_4 &= P_3 + \frac{cos( \pi )}{4!}(x- \pi)^4
+        \end{split}
+\end{equation*}
+Ahora, graficando con geogebra:
+\begin{center}
+        \includegraphics[width=16cm]{./imagenes/TaylorPols_Ihebel.jpeg}
+\end{center}
 
 
 % ---- 03. Ejercicio 30 sección 9.7 ABD ---- %
 
 
 % ---- 04. Ejercicio 58 sección 3.6 ABD ---- %
+\section*{Ejercicio 58, sección 3.6 ABD}
+Hay un mito que circula entre los principiantes estudiantes de cálculo que dice que todas las formas indeterminadas $0^0$ $\infty ^ 0$ y $1^\infty$ tienen un valor de 1 por que "cualquier cosa a la potencia 0 es 1" y "1 a cualquier potencia es 1". La falacia es que dichas potencias no son potencias sino las descripciones de límites. Los siguientes ejemplos, los cuales fueron sugeridos por el profesor Jack Staib de la universidad de Drexel, muestran que dichas formas indeterminadas pueden tener cualquier valor real positivo:
+\begin{equation*}
+        \begin{split}
+                (a) &\lim_{x \to 0^+} x^{\frac{ln(a)}{1+ln(x)}} \\
+                (b) &\lim_{x \to +\infty} x^{\frac{ln(a)}{1+ln(x)}} \\
+                (c) &\lim_{x \to 0} (x+1)^{\frac{ln(a)}{x}}
+        \end{split}
+\end{equation*}
+Verifica los resultados:
+\subsection*{Limite a), forma $0^0$}
+Considerando
+\begin{equation*}
+        y = \lim_{x \to 0^+} x^{\frac{ln(a)}{1+ln(x)}}
+\end{equation*}
+Entonces podemos aplicar logaritmo natural, donde:
+\begin{equation*}
+        \begin{split}
+                f(x) &= x \\
+                g(x) &= \frac{ln(a)}{1+ln(x)}
+        \end{split}
+\end{equation*}
+Entonces
+\begin{equation*}
+        \begin{split}
+                ln(y) &= \lim_{x \to 0^+} g(x)ln(f(x)) \\
+                &= \lim_{x \to 0^+} \frac{ln(a)}{1+ln(x)}ln(x) \\
+                 &= \lim_{x \to 0^+} \frac{ln(x)ln(a)}{1+ln(x)}
+        \end{split}
+\end{equation*}
+Ahora podemos aplicar la regla de L'hopital, donde
+\begin{equation*}
+        \begin{split}
+                f(x) &= ln(x)ln(a) \\
+                g(x) &= 1+ln(x)
+        \end{split}
+\end{equation*}
+Derivamos las nuevas $f(x)$ y $g(x)$
+\begin{equation*}
+        \begin{split}
+                f(x) &= ln(x)ln(a) \\
+                f'(x) &= ln(x) \frac{dln(a)}{dx} + ln(a) \frac{ln(x)}{dx} \\
+                &= ln(a) \cdot \frac{1}{a} \cdot 0 + ln(a)\frac{1}{x} \\
+                &= \frac{ln(a)}{x} \\
+                g(x) &= 1+ln(x) \\
+                g'(x) &= \frac{1}{x}
+        \end{split}
+\end{equation*}
+Entonces sustituimos en nuestro límite.
+\begin{equation*}
+        \begin{split}
+                ln(y) &= \lim_{x \to 0^+} \frac{\frac{ln(a)}{x}}{\frac{1}{x}} \\
+                ln(y) &= \lim_{x \to 0^+} \frac{ln(a)x}{x} \\
+                ln(y) &= \lim_{x \to 0^+} ln(a)
+        \end{split}
+\end{equation*}
+Aplicamos el límite sobre x
+\begin{equation*}
+        ln(y) = ln(a)
+\end{equation*}
+Quitamos el ln en ambos lados
+\begin{equation*}
+        y = a
+\end{equation*}
+Vemos que lo que nos restringe si a puede ser negativo o no es el hecho de que los logaritmos naturales solo están definidos en los reales positivos y por lo tanto, el valor del límite puede ser cualquier número que pertenezca a los reales siempre que sea positivo.
 
+\subsection*{Límite b), forma $\infty ^0$}
+Este límite al ser practicamente igual al anterior, lo que pasará es que de misma forma se terminará eliminando la $x$ y como también tendremos un ln(y) = ln(a) también podemos concluir que a puede ser cualquier número real positivo.
+
+\subsection*{Límite c), forma $1^\infty$}
+Considerando
+\begin{equation*}
+        y = \lim_{x \to 0} (x+1)^{\frac{ln(a)}{x}}
+\end{equation*}
+Aplicamos ln sobre ambos lados de la igualdad
+\begin{equation*}
+        \begin{split}
+                f(x) &= (x+1) \\
+                g(x) &= \frac{ln(a)}{x}
+        \end{split}
+\end{equation*}
+sustituimos
+\begin{equation*}
+        \begin{split}
+                ln(y) &= \lim_{x \to 0} \frac{ln(a)}{x}ln(x+1) \\
+                &= \lim_{x \to 0} \frac{ln(a)ln(x+1}{x}
+        \end{split}
+\end{equation*}
+
+Ahora aplicamos regla de L'hopital
+\begin{equation*}
+        \begin{split}
+                f(x) &=  ln(a)(ln(x+1) \\
+                f'(x) &= ln(a) \cdot \frac{1}{x+1} \cdot 1 + ln(x+1) \cdot \frac{1}{a} * 0 \\
+                &= \frac{ln(a)}{x+a} \\
+                g(x) &= x \\
+                &= 1
+        \end{split}
+\end{equation*}
+
+Sustituimos
+\begin{equation*}
+        \begin{split}
+                ln(y) &= \lim_{x \to 0} \frac{\frac{ln(a)}{x+1}}{\frac{1}{1}} \\
+                &= \lim_{x \to 0} \frac{ln(a)}{x+1} \ \ \text{\textit{Aplicamos limite}} \\
+                &= frac{ln(a)}{1}=ln(a)
+        \end{split}
+\end{equation*}
+
+Como volvemos a obtner
+\begin{equation*}
+        \begin{split}
+                ln(y) &= ln(a) \\
+                y &= a
+        \end{split}
+\end{equation*}
+Podemos concluir que también el valor del límite c) puede ser cualquier real positivo.
+
+Por lo tanto, podemos concluir que los valores de los 3 límites propuestos por Jack Staib pueden tomar el valor de cualquier real positivo.
 
 % ---- 05. Ejercicio 32 sección 4.7 ABD ---- %
 
@@ -77,13 +229,77 @@
 
 
 % ---- 07. Ejercicio 48 R.E. Cap. 4 ABD ---- %
+\section*{Ejercicio 48, Review Excercises Cap. 4 ABD}
+Usa derivación implicita para mostrar que la función definida como $sen(x)+cos(y)=2y$, tiene untos críticos siempre que $cos(x)=0$. \\
+Entonces ya sea por la primer o segunda derivada determina si estos puntos críticos son máximos o mínimos.\\
+
+Teniendo
+\begin{equation*}
+        sen(x)=cos(y)+2y
+\end{equation*}
+
+Derivamos sobre x
+
+\begin{equation*}
+        \begin{split}
+                cos(x)-sen(y)y' &= 2y'\\
+                cos(x) &= 2y'+sen(y)y' \\
+                cos(x) &= y'(2+sen(y)) \\
+                y' &= \frac{cos(x)}{2sen(y)}
+        \end{split}
+\end{equation*}
+
+Ahora, para obtener los puntos criticos, encontramos cuando es que f'(x) = 0
+
+\begin{equation*}
+        \begin{split}
+                \frac{cos(x)}{2sen(x)} &= 0 \\
+                cos(x) &= 0
+        \end{split}
+\end{equation*}
+
+Y sabemos que el cos(x) vale 0 siempre que x tome los siguientes valores:
+
+\begin{center}
+        $x_1 = \frac{\pi}{2}$, \ \ $x_2 = \frac{3\pi}{2}$
+\end{center}
+
+Por, lo que ahora sustituimos en f(x) (la func. original) \\
+
+\textbf{Sustituimos para $x_1$}
+
+\begin{equation*}
+        \begin{split}
+                sen(\frac{\pi}{2})+cos(y) &= 2y \\
+                1 + cos(y) &= 2y \\
+                2y-cos(y) = 1
+        \end{split}
+\end{equation*}
+
+\textbf{Sustituimos para $x_2$}
+
+\begin{equation*}
+        \begin{split}
+                sen(\frac{3\pi}{2})+cos(y) &= 2y \\
+                -1 + cos(y) &= 2y \\
+                2y-cos(y) = -1
+        \end{split}
+\end{equation*}
+Como 1 y -1 son asignados a la misma asignación en y, tenemos que que para $x_1$ se trata de un punto máximo y para $x_2$ un mínimo.
+
+Por último, como cos y sen son funciones periódicas tales que no tienen ningún modificador $w$, estos puntos se repetiran cada $2 \pi k$, de tal forma que los valores de x son
+\begin{equation*}
+        \begin{split}
+                x_1+2\pi k \\
+                x_2+2\pi k
+        \end{split}
+\end{equation*}
 
 
 % ---- 08. Ejercicio 60 R.E. Cap. 4 ABD ---- %
 
 
 % ---- 09. Ejercicio 72 R.E. Cap. 4 ABD ---- %
-
 
 
 \end{document}
