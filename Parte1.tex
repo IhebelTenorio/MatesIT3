@@ -59,6 +59,90 @@
 %\section*{Indicaciones}
 
 % ---- 01. Ejercicio 23 sección 3.4 ABD ---- %
+%------------- Ejercicio 23 -------------%
+\section{Ejercicio 23, sección 3.4 ABD}
+\textbf{Un satélite se encuentra en una órbita elíptica alrededor de la Tierra. Su distancia r(en millas) desde el centro de la tierra está dada}
+
+\[
+r = \frac{4995}{1 + 0.12 \cos \theta}
+\]
+donde \( R = 3960 \) millas es el radio de la Tierra.
+
+¿Dónde está el ángulo medido desde el punto de la órbita más cercano a la superficie de la Tierra (ver la figura)?
+
+\includegraphics[height=5.5cm]{./imagenes/ej23.png}
+
+\subsection*{(a)Halla la altirud del satélite en el perigeo(el punto más cercano a la superficie de la Tierra) y en el apogeo (el punto más alejado de la superficie de la Tierra). Utiliza 3960 mi como el radio de la Tierra.}
+
+1. \textbf{Perigeo} (distancia mínima del satélite desde el centro de la Tierra):
+   - En el perigeo, el satélite está en el punto más cercano a la superficie de la Tierra. Esto ocurre cuando \( \cos \theta = 1 \).
+   - Sustituyendo \( \cos \theta = 1 \) en la fórmula para \( r \):
+     \[
+     r_{\text{perigeo}} = \frac{4995}{1 + 0.12 \cdot 1} = \frac{4995}{1.12} \approx 4468.75 \text{ millas}
+     \]
+   - La altitud en el perigeo (distancia desde la superficie de la Tierra) es:
+     \[
+     \text{Altitud}{\text{perigeo}} = r{\text{perigeo}} - R = 4468.75 - 3960 \approx 508.75 \text{ millas}
+     \]
+
+2. \textbf{Apogeo} (distancia máxima del satélite desde el centro de la Tierra):
+   - En el apogeo, el satélite está en el punto más lejano de la superficie de la Tierra. Esto ocurre cuando \( \cos \theta = -1 \).
+   - Sustituyendo \( \cos \theta = -1 \) en la fórmula para \( r \):
+     \[
+     r_{\text{apogeo}} = \frac{4995}{1 + 0.12 \cdot (-1)} = \frac{4995}{1 - 0.12} = \frac{4995}{0.88} \approx 5676.14 \text{ millas}
+     \]
+   - La altitud en el apogeo es:
+     \[
+     \text{Altitud}{\text{apogeo}} = r{\text{apogeo}} - R = 5676.14 - 3960 \approx 1716.14 \text{ millas}
+     \]
+
+\subsection*{(b)En el instante en que \( \theta \) es 120°, el ángulo aumenta \( \theta \) a una velocidad de 2,7°/min. Halla la altitud del satélite y la velocidad a la que cambia la altitud en ese instante. Expresa la velocidad en unidades de mi/min.}
+
+Dado:
+- \( \theta = 120^\circ \),
+- \( \frac{d\theta}{dt} = 2.7^\circ/\text{min} \).
+
+1. \textbf{Calcular la altitud cuando \( \theta = 120^\circ \)}:
+   - Convertimos \( \theta \) a radianes: \( \theta = 120^\circ = \frac{2\pi}{3} \) radianes.
+   - Sustituyendo \( \cos 120^\circ = -0.5 \) en la fórmula de \( r \):
+     \[
+     r = \frac{4995}{1 + 0.12 \cdot (-0.5)} = \frac{4995}{1 - 0.06} = \frac{4995}{0.94} \approx 5313.83 \text{ millas}
+     \]
+   - La altitud cuando \( \theta = 120^\circ \) es:
+     \[
+     \text{Altitud} = r - R = 5313.83 - 3960 \approx 1353.83 \text{ millas}
+     \]
+
+2. \textbf{Calcular la tasa de cambio de la altitud en este instante}:
+   - Diferenciamos \( r \) con respecto al tiempo usando la regla de la cadena:
+     \[
+     \frac{dr}{dt} = \frac{dr}{d\theta} \cdot \frac{d\theta}{dt}
+     \]
+   - Calculamos \( \frac{dr}{d\theta} \):
+     \[
+     r = \frac{4995}{1 + 0.12 \cos \theta}
+     \]
+     Diferenciando con respecto a \( \theta \):
+     \[
+     \frac{dr}{d\theta} = \frac{-4995 \cdot 0.12 \sin \theta}{(1 + 0.12 \cos \theta)^2}
+     \]
+   - Sustituyendo \( \theta = 120^\circ \) (o \( \sin 120^\circ = \frac{\sqrt{3}}{2} \) y \( \cos 120^\circ = -0.5 \)):
+     \[
+     \frac{dr}{d\theta} = \frac{-4995 \cdot 0.12 \cdot \frac{\sqrt{3}}{2}}{(1 + 0.12 \cdot (-0.5))^2} = \frac{-299.7 \cdot \frac{\sqrt{3}}{2}}{0.94^2} \approx -275.07 \text{ millas/radian}
+     \]
+   - Finalmente, usamos \( \frac{d\theta}{dt} = 2.7^\circ/\text{min} = \frac{2.7 \cdot \pi}{180} \approx 0.0471 \) rad/min:
+     \[
+     \frac{dr}{dt} \approx -275.07 \times 0.0471 \approx -12.96 \text{ millas/min}
+     \]
+
+\subsection*{Respuestas finales}
+
+\begin{itemize}
+    \item (a) Altitud en el perigeo: aproximadamente 508.75 millas.
+    \item (a) Altitud en el apogeo: aproximadamente 1716.14 millas.
+    \item (b) Altitud cuando \( \theta = 120^\circ \): aproximadamente 1353.83 millas.
+    \item (b) Tasa de cambio de la altitud: aproximadamente \( -12.96 \) millas/min.
+\end{itemize}
 
 
 % ---- 02. Ejercicio 29 sección 9.7 ABD ---- %
@@ -223,6 +307,57 @@ Podemos concluir que también el valor del límite c) puede ser cualquier real p
 Por lo tanto, podemos concluir que los valores de los 3 límites propuestos por Jack Staib pueden tomar el valor de cualquier real positivo.
 
 % ---- 05. Ejercicio 32 sección 4.7 ABD ---- %
+%------------- Ejercicio 32 -------------%
+\section{Ejercicio 32, sección 4.7 ABD}
+\textbf{Usa el Método de Newton para aproximar las dimensiones del rectángulo de mayor área que puede inscribirse debajo de la curva} \( y = \cos x \) \textbf{para} \( 0 \leq x \leq \frac{\pi}{2} \) \textbf{(ver la figura).}
+
+\includegraphics[height=5.5cm]{./imagenes/ej32.png}
+
+\begin{enumerate}
+    \item \textbf{Expresión del área:} \\
+    La base del rectángulo es \( 2x \) y la altura es \( y = \cos x \). Entonces, el área \( A(x) \) del rectángulo es:
+    \[
+    A(x) = 2x \cos x
+    \]
+
+    \item \textbf{Derivada del área:} \\
+    Para encontrar el máximo, derivamos \( A(x) \) respecto a \( x \):
+    \[
+    A'(x) = -2x \sin x + 2 \cos x
+    \]
+    Queremos que \( A'(x) = 0 \) para encontrar los valores críticos.
+
+    \item \textbf{Aplicación del Método de Newton:} \\
+    Definimos \( f(x) = A'(x) = -2x \sin x + 2 \cos x \) y su derivada \( f'(x) \) para usar en el Método de Newton:
+    \[
+    f'(x) = -2x \cos x - 4 \sin x
+    \]
+
+    Usando un valor inicial \( x_0 = 0.5 \) y aplicando el Método de Newton, obtenemos que la aproximación para el valor de \( x \) que maximiza el área es:
+    \[
+    x \approx 0.8603
+    \]
+
+    \item \textbf{Cálculo de las dimensiones del rectángulo:} \\
+    Con \( x \approx 0.8603 \):
+    \begin{itemize}
+        \item La \textbf{altura} del rectángulo es \( y = \cos(0.8603) \approx 0.6522 \).
+        \item El \textbf{ancho} del rectángulo es \( 2x = 2 \cdot 0.8603 \approx 1.7207 \).
+    \end{itemize}
+
+    \item \textbf{Área máxima:} \\
+    El área máxima del rectángulo es:
+    \[
+    A \approx 1.1222
+    \]
+\end{enumerate}
+
+Por lo tanto, las dimensiones del rectángulo de mayor área que se puede inscribir bajo la curva \( y = \cos x \) para \( 0 \leq x \leq \frac{\pi}{2} \) son aproximadamente:
+\begin{itemize}
+    \item \textbf{Altura}: 0.6522
+    \item \textbf{Ancho}: 1.7207
+    \item \textbf{Área máxima}: 1.1222
+\end{itemize}
 
 
 % ---- 06. Ejercicio 33 sección 4.7 ABD ---- %
@@ -297,6 +432,101 @@ Por último, como cos y sen son funciones periódicas tales que no tienen ningú
 
 
 % ---- 08. Ejercicio 60 R.E. Cap. 4 ABD ---- %
+%------------- Problema  60 -------------%
+\section{Problema 60, capítulo 4, ABD}
+\textbf{Una ventana de iglesia consiste en una sección semicircular azul sobre una sección rectangular clara, como se muestra en la figura adjunta. El vidrio azul deja pasar la mitad de luz por unidad de área que el vidrio claro. Encuentra el radio \( r \) de la ventana que permita la mayor cantidad de luz si el perímetro de toda la ventana es \( P \) pies.}
+
+\includegraphics[height=5.5cm]{./imagenes/ej60.png}
+
+\begin{enumerate}
+    \item \textbf{Planteamiento del problema:} La ventana tiene dos secciones:
+    \begin{itemize}
+        \item Una parte semicircular azul con radio \( r \).
+        \item Una parte rectangular clara con altura \( h \) y ancho \( 2r \) (porque coincide con el diámetro de la semicircunferencia).
+    \end{itemize}
+    
+    \item \textbf{Perímetro de la ventana:} El perímetro total \( P \) de la ventana está dado por la suma de:
+    \begin{itemize}
+        \item La semicircunferencia azul de radio \( r \): \( \pi r \).
+        \item Los dos lados verticales del rectángulo: \( 2h \).
+        \item La base del rectángulo: \( 2r \).
+    \end{itemize}
+    
+    Entonces, la ecuación para el perímetro es:
+    \[
+    P = \pi r + 2h + 2r
+    \]
+
+    \item \textbf{Área de la ventana (para maximizar la cantidad de luz):} La luz que pasa por la ventana depende del área de cada sección y de la cantidad de luz que permite pasar cada material:
+    \begin{itemize}
+        \item Área de la sección semicircular azul: \( \frac{1}{2} \pi r^2 \), pero sólo deja pasar la mitad de la luz, por lo que la luz efectiva es \( \frac{1}{4} \pi r^2 \).
+        \item Área de la sección rectangular clara: \( 2r h \), y deja pasar toda la luz.
+    \end{itemize}
+    
+    La luz total que pasa a través de la ventana es:
+    \[
+    L = \frac{1}{4} \pi r^2 + 2r h
+    \]
+
+    \item \textbf{Resolver para \( h \) en términos de \( r \):} De la ecuación del perímetro, despejamos \( h \):
+    \[
+    h = \frac{P - \pi r - 2r}{2}
+    \]
+
+    \item \textbf{Sustitución de \( h \) en la ecuación de la luz:} Sustituimos \( h \) en la ecuación de \( L \) para obtener una función de \( r \) solamente:
+    \[
+    L(r) = \frac{1}{4} \pi r^2 + 2r \left(\frac{P - \pi r - 2r}{2}\right)
+    \]
+
+    \item \textbf{Maximizar \( L \):} Derivamos \( L \) con respecto a \( r \), igualamos a cero y resolvemos para \( r \) para encontrar el valor que maximiza la cantidad de luz que pasa.
+\end{enumerate}
+
+\section*{Solución para encontrar el radio \( r \)}
+
+Para maximizar la cantidad de luz que pasa a través de la ventana, utilizamos la función de luz total \( L(r) \) en términos del radio \( r \):
+
+\[
+L(r) = \frac{1}{4} \pi r^2 + 2r \left( \frac{P - \pi r - 2r}{2} \right)
+\]
+
+Simplificamos la segunda parte de la expresión:
+
+\[
+L(r) = \frac{1}{4} \pi r^2 + r (P - \pi r - 2r)
+\]
+\[
+L(r) = \frac{1}{4} \pi r^2 + Pr - \pi r^2 - 2r^2
+\]
+\[
+L(r) = -\frac{3}{4} \pi r^2 - 2r^2 + Pr
+\]
+
+\subsection*{Derivada de \( L(r) \) respecto a \( r \)}
+
+Derivamos \( L(r) \) con respecto a \( r \):
+
+\[
+L'(r) = -\frac{3}{2} \pi r - 4r + P
+\]
+
+Para encontrar el valor de \( r \) que maximiza la luz, igualamos \( L'(r) \) a cero:
+
+\[
+-\frac{3}{2} \pi r - 4r + P = 0
+\]
+
+\subsection*{Resolver para \( r \)}
+
+Agrupamos los términos en \( r \):
+
+\[
+r \left(-\frac{3}{2} \pi - 4\right) = -P
+\]
+\[
+r = \frac{P}{\frac{3}{2} \pi + 4}
+\]
+
+Este valor de \( r \) maximiza la cantidad de luz que pasa a través de la ventana. Si se da un valor específico para \( P \), podemos sustituirlo y calcular el valor numérico de \( r \).
 
 
 % ---- 09. Ejercicio 72 R.E. Cap. 4 ABD ---- %
